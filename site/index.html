@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Founder Vibe Code Primer — 2026-05-04</title>
+<meta name="description" content="A one-page primer for non-technical founders. Built for the 2026-05-04 lunch with Dr. Monet Stanford, PharmD at Ayeer Cuba, Burtonsville, MD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#BD1B04;
+    --primary-dark:#8A1303;
+    --ink:#0A0A0A;
+    --text:#2D2D2D;
+    --muted:#6B7280;
+    --line:#E5E7EB;
+    --surface:#F9F9F9;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--white);color:var(--text);font-family:'Plus Jakarta Sans',Calibri,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{background:var(--white)}
+  .top-accent{height:3px;background:var(--primary);width:100%}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 32px 96px}
+  .meta{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .meta .dot{width:4px;height:4px;background:var(--primary);border-radius:50%;display:inline-block}
+  h1{font-family:'Inter',Calibri,sans-serif;font-weight:700;font-size:40px;letter-spacing:-0.02em;color:var(--ink);line-height:1.1;margin:0 0 12px}
+  h1 .accent{color:var(--primary)}
+  .lede{font-size:18px;color:var(--text);max-width:64ch;margin:0 0 24px}
+  .kicker{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--primary);margin:0 0 8px;font-weight:700}
+  hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+  h2{font-family:'Inter',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--ink);margin:0 0 8px;display:flex;align-items:baseline;gap:14px}
+  h2 .num{font-family:'Inter',sans-serif;font-weight:700;color:var(--primary);font-size:14px;letter-spacing:0.15em}
+  h3{font-family:'Inter',sans-serif;font-weight:700;font-size:16px;color:var(--ink);margin:32px 0 8px;letter-spacing:-0.005em}
+  p{margin:0 0 16px;max-width:70ch}
+  a{color:var(--primary);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{text-decoration-thickness:2px}
+  details{border-top:1px solid var(--line);padding:18px 0 8px}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:14px;padding:4px 0;font-family:'Inter',sans-serif;font-weight:700;font-size:18px;color:var(--ink);letter-spacing:-0.005em}
+  summary::-webkit-details-marker{display:none}
+  summary .chevron{color:var(--primary);font-family:'Inter',sans-serif;font-size:14px;transition:transform .15s ease;display:inline-block;width:1em}
+  details[open] summary .chevron{transform:rotate(90deg)}
+  summary .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:400;color:var(--muted);letter-spacing:0.04em;margin-left:auto;text-transform:uppercase}
+  details .body{padding:16px 0 8px 28px}
+  details .body p:last-child{margin-bottom:0}
+  ol{margin:8px 0 16px 28px;padding:0}
+  ol li{margin:0 0 6px;max-width:66ch}
+  .prompt-wrap{margin:16px 0 8px}
+  .prompt{position:relative;background:var(--surface);border-left:4px solid var(--primary);padding:18px 20px;font-family:'Inter',monospace;font-size:13px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word}
+  .copy-btn{position:absolute;top:10px;right:10px;background:var(--white);border:1px solid var(--line);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:6px 10px;cursor:pointer;border-radius:4px}
+  .copy-btn:hover{border-color:var(--primary);color:var(--primary)}
+  .copy-btn.copied{color:var(--primary);border-color:var(--primary)}
+  .video{position:relative;padding-bottom:56.25%;height:0;background:var(--surface);margin:16px 0 8px;border:1px solid var(--line)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.1em;text-transform:uppercase}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  footer p{margin:0 0 4px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media (max-width:720px){.grid-2{grid-template-columns:1fr}.wrap{padding:32px 20px 64px}h1{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="top-accent" aria-hidden="true"></div>
+<main class="wrap">
+
+  <div class="meta">
+    <span>2026-05-04</span><span class="dot"></span>
+    <span>Ayeer Cuba · Burtonsville, MD</span><span class="dot"></span>
+    <span>For Dr. Monet Stanford, PharmD</span>
+  </div>
+
+  <p class="kicker">By the way, AI</p>
+  <h1>Founder Vibe Code <span class="accent">Primer</span></h1>
+  <p class="lede">A custom-built, quick and dirty primer for non-technical founders. One page, one meeting, one path: landing page → backend → full build.</p>
+
+  <hr>
+
+  <h2><span class="num">00</span> Why this exists</h2>
+  <p>Until people can see it and vote with their actual clicks and dollars and credit cards, everything you know and understand is just a theory and still needs to be validated. The fastest way to validate an idea is to build a public version of it — the uglier and earlier the better — and put it in front of real users.</p>
+  <p>There are levels to this. You can move forward yourself in the technical understanding and building more of the prototype until you have enough traction, interest, or pull to partner with, hire, or bring in a more experienced engineer. You can build something that is good enough to get real signal and feedback on, and can be used to have real discussions with partners, accelerators, vendors, potential engineers, hires, and investors.</p>
+
+  <hr>
+
+  <h2><span class="num">01</span> The three tiers</h2>
+
+  <details open>
+    <summary><span class="chevron">▶</span> Tier 1 — Landing page <span class="tag">no backend · no setup</span></summary>
+    <div class="body">
+      <p>Cheap, easy, web-based. For validating the idea, not running a business.</p>
+      <ol>
+        <li>Open <strong>Google AI Studio</strong> (free, browser) and describe your idea in plain English.</li>
+        <li>Use <strong>Stitch</strong> (free, browser) to mock up a few screens — typography, color, layout.</li>
+        <li>Stitch hands you a <code>design.md</code> you can feed back into AI Studio.</li>
+        <li>AI Studio generates a working page you can preview live.</li>
+        <li>Share the URL with one person who will give you honest feedback.</li>
+      </ol>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="chevron">▶</span> Tier 2 — Add a backend <span class="tag">Supabase + Vercel</span></summary>
+    <div class="body">
+      <p>Move off Google AI Studio and Stitch when you need users, saved responses, or login. Still mostly free.</p>
+      <ol>
+        <li>Write a one-page PRD — problem, audience, core flow, success metric.</li>
+        <li>Pick a Supabase template (or scaffold a table for what you need to save).</li>
+        <li>Use <strong>Lovable</strong> to wire the form/UI to Supabase — or copy-paste from Claude Code into the Supabase SQL editor.</li>
+        <li>Push to GitHub; <strong>Vercel</strong> auto-deploys on commit.</li>
+        <li>Add a custom domain when you have real users.</li>
+      </ol>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="chevron">▶</span> Tier 3 — Full AI software engineering <span class="tag">real IDE · version control</span></summary>
+    <div class="body">
+      <p>When the prototype is the product, not the pitch.</p>
+      <ol>
+        <li>Write a proper PRD — problem, non-goals, user journeys, success metric.</li>
+        <li>Cut a feature branch, point the agent at the PRD.</li>
+        <li>Let the agent scaffold the project; review the diff.</li>
+        <li>Iterate: code → review → test → merge.</li>
+        <li>Hire or partner with an experienced engineer when you have traction.</li>
+      </ol>
+      <p><strong>Easy options:</strong> Claude Code (terminal, copy-paste). <strong>More dedicated:</strong> Cursor (polished AI-first editor), Google Anti-Gravity (free, in the Google ecosystem).</p>
+    </div>
+  </details>
+
+  <hr>
+
+  <h2><span class="num">02</span> Founder OS — copy this prompt</h2>
+  <p>One prompt that asks you eight questions, runs five minutes of research, recommends the lowest-friction Tier-1 tool, and produces a four-week custom learning plan. Paste it into any chat assistant.</p>
+
+  <div class="prompt-wrap">
+    <div class="prompt" id="founderOsPrompt">You are Founder OS, a one-time intake for a non-technical founder. Ask me 8 questions in order, one at a time. After I answer, do 5 minutes of focused research on my idea, recommend the lowest-friction Tier-1 tool to start with, and produce a 4-week custom learning plan with weekly milestones. Link back to https://2026-05-04-meetings.wncp.ai/ for the tiered tool list and additional resources.</div>
+  </div>
+
+  <hr>
+
+  <h2><span class="num">03</span> Prime video</h2>
+  <p style="font-size:14px;color:var(--muted);margin:-4px 0 12px"><strong>Riley Brown — Vibe Coding for Beginners (Full Course 2026)</strong> · 55:25 · 247K-subscriber Black creator · 51K views · posted May 2026</p>
+  <div class="video" aria-label="Prime YouTube video">
+    <iframe src="https://www.youtube.com/embed/BpOsHF5Oj_I" title="Vibe Coding for Beginners (Full Course 2026) — Riley Brown" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <hr>
+
+  <h2><span class="num">04</span> Additional resources</h2>
+
+  <details>
+    <summary><span class="chevron">▶</span> Tier 1 — Landing page quick starts <span class="tag">google ai studio + stitch</span></summary>
+    <div class="body">
+      <p><a href="https://www.youtube.com/watch?v=Dem3ZSQ6RVM" target="_blank" rel="noopener">Google AI Studio — Full Tutorial 2026: How To Build an App</a> — a how-to-build walkthrough using the actual Tier-1 entry tool.</p>
+      <p><a href="https://www.youtube.com/watch?v=3FIRNGJh00w" target="_blank" rel="noopener">Google Stitch Just Changed Web Design Forever</a> — what Stitch is good at and how it fits next to AI Studio.</p>
+      <p><a href="https://www.youtube.com/watch?v=QGZ24YhbZT8" target="_blank" rel="noopener">Google Stitch 2.0 Tutorial: From Sketch to Code</a> — Stitch 2.0 walkthrough if you've never used it.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="chevron">▶</span> Tier 2 — Backend quick starts <span class="tag">supabase + vercel + lovable</span></summary>
+    <div class="body">
+      <p><a href="https://www.youtube.com/watch?v=WSsmsyynphM" target="_blank" rel="noopener">Lovable × Supabase: Everything Starts with Lovable and Supabase</a> — the highest-leverage no-code path to a real backend.</p>
+      <p><a href="https://www.youtube.com/watch?v=YAAxZWDIekM" target="_blank" rel="noopener">Connect Supabase in V0 Vercel — Step-by-step for Beginners</a> — Vercel v0 + Supabase wiring, by Decoding Product with Maria.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="chevron">▶</span> Tier 3 — Real IDE / agentic tool quick starts <span class="tag">claude code · cursor · anti-gravity</span></summary>
+    <div class="body">
+      <p><a href="https://www.youtube.com/watch?v=pJylXFAC87A" target="_blank" rel="noopener">Cursor vs Codex vs Claude vs Zed vs Anti-Gravity (I Tested Them All)</a> — 133K views, Feb 2026. Best single comparison if you don't know which one to pick.</p>
+      <p><a href="https://www.youtube.com/watch?v=FU2iB-UfPPA" target="_blank" rel="noopener">Codex is The NEW Best AI Coding Tool (Here's Why)</a> — Riley Brown, 55K views. The OpenAI route.</p>
+      <p><a href="https://www.youtube.com/watch?v=kddjxKEeCuM" target="_blank" rel="noopener">How to Set Up Claude Code in 2026 (Beginner Tutorial)</a> — 86K views, beginner setup of the terminal/IDE flow.</p>
+      <p><a href="https://www.youtube.com/watch?v=dgwtzpJ3rE4" target="_blank" rel="noopener">Google Antigravity FULL COURSE 2 HOURS</a> — long-form deep dive on the free Google option.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="chevron">▶</span> Public build &amp; methodology <span class="tag">2 links</span></summary>
+    <div class="body">
+      <p><a href="https://mlt20buildathon.events.wncp.ai/" target="_blank" rel="noopener">MLT20 AI Buildathon</a> — the workshop this primer is patterned on (skill tracks: Beginner Lovable / Developer Cursor+Supabase+Vercel / Expert agents).</p>
+      <p><a href="https://wncp.ai/methodology" target="_blank" rel="noopener">WNCP AI Methodology</a> — Scope / Ship / Scale.</p>
+    </div>
+  </details>
+
+  <hr>
+
+  <footer>
+    <p>By the way, AI. WNCP AI is beginning to support founders learning to build with AI.</p>
+    <p><a href="https://wncp.ai" target="_blank" rel="noopener">wncp.ai</a></p>
+  </footer>
+
+</main>
+
+<script>
+  // Build a small "Copy" button into the Founder OS prompt.
+  (function(){
+    var promptEl = document.getElementById('founderOsPrompt');
+    if (!promptEl) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label','Copy Founder OS prompt to clipboard');
+    btn.addEventListener('click', function(){
+      var text = promptEl.textContent.trim();
+      var done = function(){ btn.textContent = 'Copied'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('copied'); }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(fallback);
+      } else { fallback(); }
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) { btn.textContent='Press ⌘C'; }
+        document.body.removeChild(ta);
+      }
+    });
+    promptEl.appendChild(btn);
+  })();
+</script>
+</body>
+</html>
