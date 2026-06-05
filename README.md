@@ -4,22 +4,24 @@ A single-page site built for the lunch meeting with **Dr. Monet Stanford, PharmD
 
 Target URL: **`https://2026-05-04-meetings.wncp.ai/`**
 
-## Layout
+| Layout
 ```
-/                   → site/index.html
+/                   → site/index.html  (reference HTML build, visual-review checkpoint)
 /planning/
     PRD.md                — meeting-specific PRD (audience, thesis, tiers, Founder OS prompt, Vercel deployment plan, build plan, open questions)
     01-page-copy.md       — page copy in deploy-ready form, with prime video + per-tier YouTube quick starts
     02-design-decision.md — why we picked the "Three Tiers, Stacked" framing
     03-round2-followup.md — spec-first + live Tier-1 build + design.md handoff plan
+    TECH_STACK.md         — stack at a glance, repo layout, build & deploy commands
 /resources/
-    DESIGN.md                       — Kinetic Editorial, imported from /opt/dev_projects/mlt20-buildathon/planning/
+    DESIGN.md                       — Kinetic Editorial, web-context adaptation of the canonical WNCP AI Design System (5_Library/Design Systems/WNCP AI Design System/)
     PRD-buildathon-reference.md     — MLT20 Buildathon PRD, imported as a pattern reference
+/src/  (production Next.js app, see planning/TECH_STACK.md for layout)
 ```
 
 ## Sources
-- Design system: [`resources/DESIGN.md`](resources/DESIGN.md) — Kinetic Editorial, imported from the MLT20 Buildathon
-- Reference PRD: [`resources/PRD-buildathon-reference.md`](resources/PRD-buildathon-reference.md) — MLT20 Buildathon PRD, imported as a pattern reference
+- Design system: [`resources/DESIGN.md`](resources/DESIGN.md) — WNCP AI Kinetic Editorial, web-adapted. The canonical source is the WNCP shared projects vault at `5_Library/Design Systems/WNCP AI Design System/`.
+- Reference PRD: [`resources/PRD-buildathon-reference.md`](resources/PRD-buildathon-reference.md) — MLT20 Buildathon PRD, imported for the same pattern
 
 ## Build
 - Static HTML/CSS, no framework

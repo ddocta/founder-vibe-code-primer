@@ -99,16 +99,16 @@ A single prompt that asks questions, runs research, recommends a tool, and draft
 - **Hosting:** Push the `out/` directory to Vercel (either via `vercel deploy --prebuilt` or by deploying the Next.js project and letting Vercel run the static build).
 - **Domain:** `2026-05-04-meetings.wncp.ai` — DNS via Cloudflare to Vercel per the `wncp-vercel-deploy-cloudflare` skill.
 - **Auth:** None. This is a public artifact.
-- **Repo:** Initialize a git repo in this project; create the `dev` branch; first deploy to a preview URL; Damien reviews preview; only then promote to production.
+- **Repo:** Git repo already initialized on the `dev` branch (first commit `2ceb29f` captured v1.1). First deploy to a preview URL via `git push origin dev`; Damien reviews preview; only then promote to production.
 
 ## 12. Build Plan
-1. `npx create-next-app@latest 2026-05-04-founder-vibe-code-primer --ts --no-tailwind --app --src-dir --import-alias '@/*'`
-2. Copy the Kinetic Editorial design tokens from `/resources/DESIGN.md` into `src/app/globals.css` (root color variables, Inter + Plus Jakarta Sans via `next/font`).
-3. Port the three tier sections, the Founder OS prompt, the prime video, and the additional resources section from `planning/01-page-copy.md` into a single `app/page.tsx` using React Server Components (no `'use client'` needed except for the copy-to-clipboard button).
-4. Convert the static HTML's `<details>`/`<summary>` to a small client component (`app/components/Collapsible.tsx`) with the same behavior; keep markup accessible.
-5. Embed the prime YouTube video via `next-embed` or raw `<iframe>` with `loading="lazy"`.
-6. Add `output: 'export'` to `next.config.js` AND `images: { unoptimized: true }` (the latter is required for `next/image` to work with static export). Add a `vercel.json` (or rely on Vercel's auto-detection) and an SPA-style fallback route.
-7. First deploy to a preview URL via `vercel --prod=false` (or `git push origin dev` if GH is wired). Damien reviews preview. On approval, promote to production.
+1. **No `create-next-app`.** This directory already contains `planning/`, `site/`, `resources/` — running `npx create-next-app` would clobber them. Scaffold by hand: write `package.json`, `tsconfig.json`, `next.config.js`, `.gitignore`, `src/app/{layout,page,globals.css}`, and `src/components/CopyPrompt.tsx` directly.
+2. Copy the Kinetic Editorial design tokens from `resources/DESIGN.md` into `src/app/globals.css` (root CSS variables prefixed `--wncp-*`, Inter + Plus Jakarta Sans via `next/font/google`).
+3. Port the three tier sections, the Founder OS prompt, the prime video, and the additional resources section from `planning/01-page-copy.md` into a single `app/page.tsx` using React Server Components. Only `CopyPrompt.tsx` needs `'use client'`.
+4. `<details>`/`<summary>` works as a server component out of the box. No custom Collapsible component needed.
+5. Embed the prime YouTube video as a raw `<iframe>` with `loading="lazy"` (no `next/image` to keep the build simple and `images.unoptimized: true` to silence the static-export warning).
+6. Set `output: 'export'` in `next.config.js` AND `images: { unoptimized: true }` (the latter is required for `next/image` to work with static export). Vercel auto-detects static export.
+7. First deploy to a preview URL via `git push origin dev`. Vercel creates a preview per branch. Damien reviews preview. On approval, promote to production.
 8. DNS the `2026-05-04-meetings.wncp.ai` subdomain to Vercel via Cloudflare.
 
 ## 13. Open Questions
