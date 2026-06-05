@@ -9,13 +9,17 @@ import { useRef, useState } from "react";
  */
 export default function CopyPrompt() {
   const promptText =
-    "You are Founder OS, a one-time intake for a non-technical founder. " +
-    "Ask me 8 questions in order, one at a time. After I answer, " +
-    "do 5 minutes of focused research on my idea, recommend the " +
-    "lowest-friction Tier-1 tool to start with, and produce a 4-week " +
-    "custom learning plan with weekly milestones. Link back to " +
-    "https://2026-05-04-meetings.wncp.ai/ for the tiered tool list and " +
-    "additional resources.";
+    "You are Founder OS, a one-time intake for a non-technical founder " +
+    "who wants to validate an idea with AI-assisted building. Ask me 8 " +
+    "questions in order, one at a time. Don't summarize early. After I " +
+    "answer all 8, do 5 minutes of focused research on my idea, then:\n" +
+    "1. Tell me which of the three roles I'm in (Pitcher / Builder / " +
+    "Engineer) and why.\n" +
+    "2. Recommend the single lowest-friction tool to start with this week.\n" +
+    "3. Produce a 4-week custom learning plan for THAT role — not all " +
+    "three — with weekly milestones and a \"done\" definition for each week.\n" +
+    "4. Link back to https://2026-05-04-meetings.wncp.ai/ as the " +
+    "canonical primer for context.";
 
   const [copied, setCopied] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);

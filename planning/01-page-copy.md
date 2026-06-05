@@ -1,7 +1,7 @@
 # Page Copy — Founder Vibe Code Primer
 **Date:** 2026-05-04 · **Location:** Cuba De Ayer, Burtonsville, MD · **For:** Dr. Monet Stanford, PharmD
 **URL (target):** https://2026-05-04-meetings.wncp.ai/
-**Deployment:** Vercel (Next.js, static export — `output: 'export'` in `next.config.js`)
+**Deployment:** Vercel (Next.js, standard build served as static)
 
 ---
 
@@ -9,74 +9,113 @@
 
 **By the way, AI** — beginning to support founders learning to build with AI.
 
-A custom-built, quick and dirty primer for non-technical founders. One page, one meeting, one path: landing page → backend → full build.
+> **Three jobs. One journey. Pick the role that fits your week, not the role you wish you were ready for.**
 
-## Thesis (two short paragraphs)
+A one-page primer for non-technical founders. Not a syllabus. Not a tool review. A *job description for the version of you that exists this week*, with the smallest possible first move attached.
+
+## Section 01 — The 3-minute mental model
 
 Until people can see it and vote with their actual clicks and dollars and credit cards, everything you know and understand is just a theory and still needs to be validated. The fastest way to validate an idea is to build a public version of it — the uglier and earlier the better — and put it in front of real users.
 
-There are levels to this. You can move forward yourself in the technical understanding and building more of the prototype until you have enough traction, interest, or pull to partner with, hire, or bring in a more experienced engineer. You can build something that is good enough to get real signal and feedback on, and can be used to have real discussions with partners, accelerators, vendors, potential engineers, hires, and investors.
+There are **levels to this**. You don't jump from "I have an idea" to "I need to hire an engineer." You move through three jobs, in order, and graduate from each before the next one makes sense. The wrong move at each level is the same: trying to do the next level's job with this level's tools.
 
-## Tier 1 — Landing Page
-*Cheap, easy, web-based. No backend, no credits, no setup.*
+**[Watch this first — 10 min, sets the vocabulary for everything below](https://www.youtube.com/watch?v=-LFB8D9WV-g)**
+"Learn to Vibe Code in 10 Minutes" — the clearest short explainer of what changed when AI started writing the code.
 
-1. Open **Google AI Studio** (free, browser) and describe your idea in plain English.
-2. Use **Stitch** (free, browser) to mock up a few screens — typography, color, layout.
-3. Stitch hands you a `design.md` you can feed back into AI Studio.
-4. AI Studio generates a working page you can preview live.
-5. Share the URL with one person who will give you honest feedback.
+## Section 02 — The three roles
 
-## Tier 2 — Add a Backend
-*Move off Google AI Studio and Stitch. Supabase + Vercel, still mostly free.*
+Each role is a **job you do this week**, with a specific tool, a checklist, and a graduation trigger. Pick the one whose checklist looks like your week. If none of them look like your week, you're not in the right one yet.
 
-1. Write a one-page PRD — problem, audience, core flow, success metric.
-2. Pick a Supabase template (or scaffold a table for what you need to save).
-3. Use **Lovable** to wire the form/UI to Supabase (or copy-paste from Claude Code into the Supabase SQL editor).
-4. Push to GitHub; **Vercel** auto-deploys on commit.
-5. Add a custom domain when you have real users.
+### Role 1 — The Pitcher
 
-## Tier 3 — Full AI Software Engineering
-*A real IDE, version control, agentic tools.*
+> **"Can I show this to one person and watch them click?"**
 
-1. Write a proper PRD — problem, non-goals, user journeys, success metric.
-2. Cut a feature branch, point the agent at the PRD.
-3. Let the agent scaffold the project; review the diff.
-4. Iterate: code → review → test → merge.
-5. Hire or partner with an experienced engineer when you have traction.
+**You are here when:** you have an idea but no page, no screenshot, no link. You're describing it out loud and people are politely nodding.
 
-**Easy options:** Claude Code (terminal, copy-paste). **More dedicated:** Cursor (polished AI-first editor), Google Anti-Gravity (free, in the Google ecosystem).
+**The job:** turn your idea into a single clickable page. Not a real product. A *prop* — a fake-but-real-looking thing you can put in front of one specific human and watch them react.
 
-## The Founder OS Prompt (copy-paste)
+**The tool:** [Google AI Studio](https://aistudio.google.com/) (free, browser) + [Google Stitch](https://stitch.withgoogle.com/) for the visual layer. No install, no account needed, no code.
+
+**This week's checklist:**
+1. Open Google AI Studio. Type a paragraph describing the page you wish existed.
+2. Generate. Iterate the prompt until the page actually looks like your idea.
+3. Take a screenshot. Send it to one person who will not be polite.
+4. Ask them: "If this existed, would you click the button? Why or why not?"
+5. Write down what they said in one sentence. That's your next prompt.
+
+**You graduate to Role 2 when:** you've shown the page to 5 different people, heard the same 2-3 things repeated back, and at least one of them has asked "when can I sign up?"
+
+### Role 2 — The Builder
+
+> **"Can real people actually use this, save their stuff, and come back?"**
+
+**You are here when:** the prop isn't enough. You have a feedback pattern. People are asking to *do* the thing, not just look at it. You need a login, a database, a real domain.
+
+**The job:** wire a backend to the page you already have. Users can sign up, their stuff is saved, the app survives a page refresh. Still mostly free.
+
+**The tool:** [Lovable](https://lovable.dev/) (no-code frontend) + [Supabase](https://supabase.com/) (auth + database) + [Vercel](https://vercel.com/) (hosting, auto-deploys from GitHub). All free for the first project.
+
+**This week's checklist:**
+1. Write a one-page PRD — problem, who it's for, the one core flow, how you measure success.
+2. Pick the Supabase template that matches (auth + a table for what you save) — or copy-paste from Claude Code into the Supabase SQL editor.
+3. In Lovable, build the form. Wire it to Supabase. Push to GitHub.
+4. Vercel auto-deploys the moment you push.
+5. Buy a domain ($12/year) and point it at the Vercel project.
+
+**You graduate to Role 3 when:** you have 10 real users, you have a paying customer OR a partner conversation that requires you to ship real features, and you've felt the pain of "I broke production and I don't know how I did it."
+
+### Role 3 — The Engineer
+
+> **"Can I ship faster than I break things, and explain to another engineer what I built?"**
+
+**You are here when:** the prototype is the product, not the pitch. You are not a "non-technical founder who codes" anymore — you are a founder who owns the codebase. The next conversation you need to have is with a senior engineer, and you need to be able to *show* them the system, not just describe it.
+
+**The job:** move out of the browser, into a real IDE, with version control, proper PRDs, and an AI agent as a teammate instead of a vending machine. Write tests. Review diffs. Cut branches.
+
+**The tool:** [Claude Code](https://claude.com/product/claude-code) (terminal, copy-paste) is the easiest entry. [Cursor](https://cursor.com/) is the polished AI-first editor. [Google Anti-Gravity](https://antigravity.google/) is the free option if you're deep in the Google ecosystem. All three do the same job — pick the one you'll actually open every day.
+
+**This week's checklist:**
+1. Write a proper PRD — problem, **non-goals**, user journeys, success metric.
+2. Cut a feature branch. Point the agent at the PRD as `PRD.md` in the repo root.
+3. Let the agent scaffold. **You** read the diff. If you can't explain every changed file, it's not done.
+4. Iterate: code → review → test → merge. Never push to main without reading the diff.
+5. When you hit traction, hire or partner with an engineer — and now you can *talk to them* about the system they own.
+
+## Section 03 — Founder OS prompt (the 8-question intake)
+
+This is the prompt. Copy it. Paste it into any chat assistant. Answer the 8 questions honestly. It will research your idea, recommend which Role to start in this week, and give you a 4-week plan for that role.
 
 ```
-You are Founder OS, a one-time intake for a non-technical founder. Ask me 8 questions in order, one at a time. After I answer, do 5 minutes of focused research on my idea, recommend the lowest-friction Tier-1 tool to start with, and produce a 4-week custom learning plan with weekly milestones. Link back to https://2026-05-04-meetings.wncp.ai/ for the tiered tool list and additional resources.
+You are Founder OS, a one-time intake for a non-technical founder who wants to validate an idea with AI-assisted building. Ask me 8 questions in order, one at a time. Don't summarize early. After I answer all 8, do 5 minutes of focused research on my idea, then:
+1. Tell me which of the three roles I'm in (Pitcher / Builder / Engineer) and why.
+2. Recommend the single lowest-friction tool to start with this week.
+3. Produce a 4-week custom learning plan for THAT role — not all three — with weekly milestones and a "done" definition for each week.
+4. Link back to https://2026-05.04-meetings.wncp.ai/ as the canonical primer for context.
 ```
 
-## Prime Video (anchor)
+## Section 04 — If you watch one video per role
 
-**[Riley Brown — Vibe Coding for Beginners (Full Course 2026)](https://www.youtube.com/watch?v=BpOsHF5Oj_I)** · 55:25 · 51K views · posted ~4 weeks ago (May 2026)
-247K-subscriber creator; this is the "one anchor" long tutorial. Black creator, widely respected in the vibe-coding community, full beginner-to-launch walkthrough covering the same tools this page recommends.
+Skip the long courses. Watch these three short videos — one per role — in order. Total time: under 90 minutes.
 
-## Additional Resources — Quick Starts by Tier (collapsible)
+**If you are a Pitcher (start here):**
+- **"Learn to Vibe Code in 10 Minutes"** — [youtube.com/watch?v=-LFB8D9WV-g](https://www.youtube.com/watch?v=-LFB8D9WV-g) — the mental model in 10 minutes. Watch this before you touch a tool.
+- **"Google AI Studio — Full Tutorial 2026"** — [youtube.com/watch?v=Dem3ZSQ6RVM](https://www.youtube.com/watch?v=Dem3ZSQ6RVM) — the actual Tier-1 tool, end to end.
+- **"Google Stitch 2.0: From Sketch to Code"** — [youtube.com/watch?v=QGZ24YhbZT8](https://www.youtube.com/watch?v=QGZ24YhbZT8) — if your generated page looks generic, this is the fix.
 
-**Tier 1 — Landing page quick starts**
-- [Google AI Studio — Full Tutorial 2026: How To Build an App](https://www.youtube.com/watch?v=Dem3ZSQ6RVM) — a how-to-build walkthrough using the actual Tier-1 entry tool.
-- [Google Stitch Just Changed Web Design Forever](https://www.youtube.com/watch?v=3FIRNGJh00w) — what Stitch is good at and how it fits next to AI Studio.
-- [Google Stitch 2.0 Tutorial: From Sketch to Code](https://www.youtube.com/watch?v=QGZ24YhbZT8) — Stitch 2.0 walkthrough if you've never used it.
+**If you are a Builder (graduate from Pitcher first):**
+- **"How to Build an App From SCRATCH with Lovable + Supabase"** — [youtube.com/watch?v=zA5kv1P_p7I](https://www.youtube.com/watch?v=zA5kv1P_p7I) — Christian Peverelli (WeAreNoCode), 30:32, 373K views. Year-old but still the cleanest end-to-end walkthrough of the no-code path.
+- **"Lovable × Supabase: Everything Starts with Lovable"** — [youtube.com/watch?v=WSsmsyynphM](https://www.youtube.com/watch?v=WSsmsyynphM) — what the integration actually does in production.
 
-**Tier 2 — Backend quick starts**
-- [Lovable × Supabase: Everything Starts with Lovable and Supabase](https://www.youtube.com/watch?v=WSsmsyynphM) — the highest-leverage no-code path to a real backend.
-- [How to Build an App From SCRATCH with Lovable + Supabase](https://www.youtube.com/watch?v=zA5kv1P_p7I) — Christian Peverelli (WeAreNoCode), 373K views, 30:32. A year old but still the highest-quality end-to-end walkthrough of the no-code path. (Recorded 2025; tool behavior unchanged as of May 2026.)
+**If you are an Engineer (graduate from Builder first):**
+- **"Cursor vs Codex vs Claude vs Zed vs Anti-Gravity (I Tested Them All)"** — [youtube.com/watch?v=pJylXFAC87A](https://www.youtube.com/watch?v=pJylXFAC87A) — 133K views. Best single comparison if you don't know which IDE to pick.
+- **"Riley Brown — Vibe Coding for Beginners (Full Course 2026)"** — [youtube.com/watch?v=BpOsHF5Oj_I](https://www.youtube.com/watch?v=BpOsHF5Oj_I) — 55:25, the deep end-to-end build. Black creator, 247K subscribers, the most-respected primer in the space. Watch this when you're ready to ship your first serious project.
+- **"How to Set Up Claude Code in 2026"** — [youtube.com/watch?v=kddjxKEeCuM](https://www.youtube.com/watch?v=kddjxKEeCuM) — 86K views, beginner setup of the terminal/IDE flow.
 
-**Tier 3 — Real IDE / agentic tool quick starts**
-- [Cursor vs Codex vs Claude vs Zed vs Anti-Gravity (I Tested Them All)](https://www.youtube.com/watch?v=pJylXFAC87A) — 133K views, recorded Feb 2026. Best single comparison if you don't know which one to pick.
-- [Codex is The NEW Best AI Coding Tool (Here's Why)](https://www.youtube.com/watch?v=FU2iB-UfPPA) — Riley Brown, 1:23, 55K views. If you want the OpenAI route.
-- [How to Set Up Claude Code in 2026 (Beginner Tutorial)](https://www.youtube.com/watch?v=kddjxKEeCuM) — 86K views, beginner setup of the terminal/IDE flow.
-- [Google Antigravity FULL COURSE 2 HOURS](https://www.youtube.com/watch?v=dgwtzpJ3rE4) — long-form deep dive on the free Google option.
+## Section 05 — Where this comes from
 
-**Public build & methodology**
-- [MLT20 AI Buildathon](https://mlt20buildathon.events.wncp.ai/) — the workshop this primer is patterned on (skill tracks: Beginner Lovable / Developer Cursor+Supabase+Vercel / Expert agents).
-- [WNCP AI Methodology](https://wncp.ai/methodology) — Scope / Ship / Scale.
+- **[MLT20 AI Buildathon](https://mlt20buildathon.events.wncp.ai/)** — the workshop this primer is patterned on. Three skill tracks aligned to the three roles here: Beginner (Lovable) / Developer (Cursor + Supabase + Vercel) / Expert (Claude Code agents).
+- **[WNCP AI Methodology](https://wncp.ai/methodology)** — Scope / Ship / Scale. The framework behind the role progression.
 
 ## Footer
-By the way, AI. WNCP AI is beginning to support founders learning to build with AI. https://wncp.ai
+
+By the way, AI. WNCP AI is beginning to support founders learning to build with AI. [wncp.ai](https://wncp.ai)
