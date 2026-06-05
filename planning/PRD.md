@@ -2,7 +2,7 @@
 title: Founder Vibe Code Primer — One-Page Meeting Site
 date: 2026-05-04
 audience: Dr. Monet Stanford, PharmD (SVP Healthcare Policy, Washington Analysis)
-location: Ayeer Cuba, Burtonsville, MD
+location: Cuba De Ayer, Burtonsville, MD
 owner: Damien Peters (WNCP AI)
 status: v1.1 — corrected meeting date 2026-05-04; deployment target is Vercel (Next.js, static export)
 ---

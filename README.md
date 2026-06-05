@@ -1,6 +1,6 @@
 # 2026.05.04 Founder Vibe Code Primer
 
-A single-page site built for the lunch meeting with **Dr. Monet Stanford, PharmD** on **2026-05-04** at **Ayeer Cuba, Burtonsville, MD**. The page is both the message (a tiered primer for non-technical founders learning to vibe-code) and the proof (it was built with the same tools it recommends).
+A single-page site built for the lunch meeting with **Dr. Monet Stanford, PharmD** on **2026-05-04** at **Cuba De Ayer, Burtonsville, MD**. The page is both the message (a tiered primer for non-technical founders learning to vibe-code) and the proof (it was built with the same tools it recommends).
 
 Target URL: **`https://2026-05-04-meetings.wncp.ai/`**
 

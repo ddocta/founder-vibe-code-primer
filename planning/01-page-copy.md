@@ -1,5 +1,5 @@
 # Page Copy — Founder Vibe Code Primer
-**Date:** 2026-05-04 · **Location:** Ayeer Cuba, Burtonsville, MD · **For:** Dr. Monet Stanford, PharmD
+**Date:** 2026-05-04 · **Location:** Cuba De Ayer, Burtonsville, MD · **For:** Dr. Monet Stanford, PharmD
 **URL (target):** https://2026-05-04-meetings.wncp.ai/
 **Deployment:** Vercel (Next.js, static export — `output: 'export'` in `next.config.js`)
 

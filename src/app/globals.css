@@ -1,0 +1,252 @@
+/* =============================================================================
+   Founder Vibe Code Primer — global styles
+
+   Source of truth: /resources/DESIGN.md (web adaptation of the WNCP AI
+   Kinetic Editorial design system).  If you change a value here, also
+   update DESIGN.md so the two stay in sync.
+   ========================================================================== */
+
+:root {
+  /* Primary palette (matches DESIGN.md §2) */
+  --wncp-primary:        #BD1B04;   /* Brand red — dividers, prompt left-border, section numbers, links, focus rings */
+  --wncp-primary-dark:   #8A1303;   /* Reserved for the signature red gradient */
+
+  /* Neutrals */
+  --wncp-ink:            #0A0A0A;   /* Primary heading color on light surfaces */
+  --wncp-text:           #2D2D2D;   /* Body text on light surfaces */
+  --wncp-muted:          #6B7280;   /* Subtitles, captions, metadata, card body */
+  --wncp-line:           #E5E7EB;   /* Card borders, section separators */
+
+  /* Surfaces — white-forward per the brief */
+  --wncp-bg:             #FFFFFF;   /* Default page background */
+  --wncp-surface-soft:   #F9F9F9;   /* Founder OS prompt block, embedded surfaces */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--wncp-bg);
+  color: var(--wncp-text);
+  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', Calibri, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body { background: var(--wncp-bg); }
+
+/* ----- Layout -------------------------------------------------------------- */
+.top-accent { height: 3px; background: var(--wncp-primary); width: 100%; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 48px 32px 96px; }
+
+/* ----- Meta strip (date · location · audience) ----------------------------- */
+.meta {
+  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wncp-muted);
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.meta .dot { width: 4px; height: 4px; background: var(--wncp-primary); border-radius: 50%; display: inline-block; }
+
+/* ----- Kicker (e.g., "By the way, AI") ------------------------------------- */
+.kicker {
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--wncp-primary);
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+/* ----- Headings ------------------------------------------------------------ */
+h1 {
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  color: var(--wncp-ink);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+h1 .accent { color: var(--wncp-primary); }
+
+.lede {
+  font-size: 18px;
+  color: var(--wncp-text);
+  max-width: 64ch;
+  margin: 0 0 24px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--wncp-line);
+  margin: 40px 0;
+}
+
+h2 {
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--wncp-ink);
+  margin: 0 0 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+h2 .num {
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-weight: 700;
+  color: var(--wncp-primary);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+}
+
+h3 {
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--wncp-ink);
+  margin: 32px 0 8px;
+  letter-spacing: -0.005em;
+}
+
+p { margin: 0 0 16px; max-width: 70ch; }
+
+a {
+  color: var(--wncp-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+/* Focus rings — visible, never removed */
+:focus-visible {
+  outline: 2px solid var(--wncp-primary);
+  outline-offset: 2px;
+}
+
+/* ----- Collapsibles -------------------------------------------------------- */
+details { border-top: 1px solid var(--wncp-line); padding: 18px 0 8px; }
+details:last-of-type { border-bottom: 1px solid var(--wncp-line); }
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 4px 0;
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--wncp-ink);
+  letter-spacing: -0.005em;
+}
+summary::-webkit-details-marker { display: none; }
+summary .chevron {
+  color: var(--wncp-primary);
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-size: 14px;
+  transition: transform .15s ease;
+  display: inline-block;
+  width: 1em;
+}
+details[open] summary .chevron { transform: rotate(90deg); }
+
+summary .tag {
+  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--wncp-muted);
+  letter-spacing: 0.04em;
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+details .body { padding: 16px 0 8px 28px; }
+details .body p:last-child { margin-bottom: 0; }
+
+ol { margin: 8px 0 16px 28px; padding: 0; }
+ol li { margin: 0 0 6px; max-width: 66ch; }
+
+/* ----- Founder OS prompt block ------------------------------------------- */
+.prompt-wrap { margin: 16px 0 8px; }
+.prompt {
+  position: relative;
+  background: var(--wncp-surface-soft);
+  border-left: 4px solid var(--wncp-primary);
+  padding: 18px 20px;
+  font-family: var(--font-inter), Inter, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--wncp-ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--wncp-bg);
+  border: 1px solid var(--wncp-line);
+  color: var(--wncp-ink);
+  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.copy-btn:hover { border-color: var(--wncp-primary); color: var(--wncp-primary); }
+.copy-btn.copied { color: var(--wncp-primary); border-color: var(--wncp-primary); }
+
+/* ----- Prime video block -------------------------------------------------- */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: var(--wncp-surface-soft);
+  margin: 16px 0 8px;
+  border: 1px solid var(--wncp-line);
+}
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video .ph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wncp-muted);
+  font-family: var(--font-inter), Inter, Calibri, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ----- Footer ------------------------------------------------------------- */
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--wncp-line);
+  font-size: 13px;
+  color: var(--wncp-muted);
+}
+footer p { margin: 0 0 4px; }
+
+/* ----- Mobile -------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .wrap { padding: 32px 20px 64px; }
+  h1 { font-size: 32px; }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "founder-vibe-code-primer",
+  "version": "1.4.0",
+  "private": true,
+  "description": "One-page primer for non-technical founders learning to vibe-code. Built for the 2026-05-04 lunch with Dr. Monet Stanford, PharmD. See planning/PRD.md.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}
