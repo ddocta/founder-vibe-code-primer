@@ -107,11 +107,14 @@ A single prompt that asks questions, runs research, recommends a tool, and draft
 3. Port the three tier sections, the Founder OS prompt, the prime video, and the additional resources section from `planning/01-page-copy.md` into a single `app/page.tsx` using React Server Components (no `'use client'` needed except for the copy-to-clipboard button).
 4. Convert the static HTML's `<details>`/`<summary>` to a small client component (`app/components/Collapsible.tsx`) with the same behavior; keep markup accessible.
 5. Embed the prime YouTube video via `next-embed` or raw `<iframe>` with `loading="lazy"`.
-6. Add `output: 'export'` to `next.config.js`; add a `vercel.json` (or rely on Vercel's auto-detection) and an SPA-style fallback route.
+6. Add `output: 'export'` to `next.config.js` AND `images: { unoptimized: true }` (the latter is required for `next/image` to work with static export). Add a `vercel.json` (or rely on Vercel's auto-detection) and an SPA-style fallback route.
 7. First deploy to a preview URL via `vercel --prod=false` (or `git push origin dev` if GH is wired). Damien reviews preview. On approval, promote to production.
 8. DNS the `2026-05-04-meetings.wncp.ai` subdomain to Vercel via Cloudflare.
 
 ## 13. Open Questions
-- Which single YouTube video anchors the page? (See `planning/01-page-copy.md` for the candidate list — Riley Brown's *Vibe Coding for Beginners (Full Course 2026)* is the current recommendation: 247K-subscriber Black creator, 51K views, posted 4 weeks ago, full 55-min beginner course.)
 - Should the Founder OS prompt link to a Notion form for the intake, or just stay as copy-paste?
 - Any additional resources to include in the bottom collapsible?
+
+## 14. Resolved decisions
+- **Anchor video:** Riley Brown's *Vibe Coding for Beginners (Full Course 2026)* (BpOsHF5Oj_I) — 247K-subscriber Black creator, 51K views, posted May 2026, 55:25 beginner course. Verified 2026-06-04.
+- **Tier 2 quick-start video:** Christian Peverelli (WeAreNoCode) — *How to Build an App From SCRATCH with Lovable + Supabase* — 373K views, recorded 2025-05-01 (a year old, but still the highest-quality end-to-end Tier-2 walkthrough; tool behavior unchanged as of May 2026). Replaces the earlier V0+Supabase video (1,439 views, well under the 30K threshold).

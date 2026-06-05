@@ -66,10 +66,10 @@ You are Founder OS, a one-time intake for a non-technical founder. Ask me 8 ques
 
 **Tier 2 — Backend quick starts**
 - [Lovable × Supabase: Everything Starts with Lovable and Supabase](https://www.youtube.com/watch?v=WSsmsyynphM) — the highest-leverage no-code path to a real backend.
-- [Connect Supabase in V0 Vercel — Step-by-step for Beginners](https://www.youtube.com/watch?v=YAAxZWDIekM) — Vercel v0 + Supabase wiring, by Decoding Product with Maria.
+- [How to Build an App From SCRATCH with Lovable + Supabase](https://www.youtube.com/watch?v=zA5kv1P_p7I) — Christian Peverelli (WeAreNoCode), 373K views, 30:32. A year old but still the highest-quality end-to-end walkthrough of the no-code path. (Recorded 2025; tool behavior unchanged as of May 2026.)
 
 **Tier 3 — Real IDE / agentic tool quick starts**
-- [Cursor vs Codex vs Claude vs Zed vs Anti-Gravity (I Tested Them All)](https://www.youtube.com/watch?v=pJylXFAC87A) — 133K views, Feb 2026. Best single comparison if you don't know which one to pick.
+- [Cursor vs Codex vs Claude vs Zed vs Anti-Gravity (I Tested Them All)](https://www.youtube.com/watch?v=pJylXFAC87A) — 133K views, recorded Feb 2026. Best single comparison if you don't know which one to pick.
 - [Codex is The NEW Best AI Coding Tool (Here's Why)](https://www.youtube.com/watch?v=FU2iB-UfPPA) — Riley Brown, 1:23, 55K views. If you want the OpenAI route.
 - [How to Set Up Claude Code in 2026 (Beginner Tutorial)](https://www.youtube.com/watch?v=kddjxKEeCuM) — 86K views, beginner setup of the terminal/IDE flow.
 - [Google Antigravity FULL COURSE 2 HOURS](https://www.youtube.com/watch?v=dgwtzpJ3rE4) — long-form deep dive on the free Google option.

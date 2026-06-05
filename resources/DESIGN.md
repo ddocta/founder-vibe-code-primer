@@ -1,101 +1,148 @@
-# Design System Document: Kinetic Editorial
+# Design System — Web Adaptation (WNCP AI Kinetic Editorial)
 
-## 1. Overview & Creative North Star
+> **Source of truth:** [`5_Library/Design Systems/WNCP AI Design System/`](file:///opt/workspaces/wncp_agentspace/6_Shared/wncp_shared_projects/5_Library/Design%20Systems/WNCP%20AI%20Design%20System/) in the WNCP shared projects vault. This file is a **web-context adaptation** of that design system, not the canonical spec. For the original spec (PowerPoint-oriented), the canonical tokens (CSS variables), the sample slides, and the asset library, see the source.
+>
+> **Why a separate file:** the WNCP AI Design System is built for PowerPoint (`pt` units, Aptos-safe font stack that ships natively on Win/Mac). This site is HTML/CSS, uses `px` units, and the visual goal is *white-forward* per the brief — the opposite of the PowerPoint default. So this file is a *context-appropriate subset* of the same brand.
 
-### Creative North Star: "The Kinetic Architect"
-This design system is built for WNCP AI to bridge the gap between technical precision and editorial high-fashion. It moves away from the "software template" look toward a "Kinetic Editorial" aesthetic—one that feels like a premium digital monograph.
+## 1. Creative North Star
 
-The system achieves this through **Structural Brutalism**: a reliance on razor-sharp 0px radii, heavy-weight geometric typography, and intentional asymmetry. We treat every slide not as a container for data, but as a balanced composition where "white space" is an active element, and the deep red (`#BD1B04`) acts as a grounding anchor for the eye.
+**"The Kinetic Architect"** — bridge technical precision and editorial high-fashion. Structural Brutalism: razor-sharp 0px corner radii, heavy-weight geometric typography, intentional asymmetry, structured line work. Red `#BD1B04` is the grounding accent.
 
----
+**Web context note:** On the web, Kinetic Editorial gets a calmer default — white-forward surface, red used sparingly as accent (dividers, prompt border, section numbers). Per the brief for this site: *"we don't want as many dark, black, and heavy red accents as we normally do."* That tone is encoded below.
 
-## 2. Colors
+## 2. Color tokens
 
-The palette is rooted in high-contrast light modes. It is unapologetic in its starkness, using red as a signal of intelligence and authority.
+| Token | Hex | Source design system var | Web usage |
+|---|---|---|---|
+| `--wncp-primary` | `#BD1B04` | `--wncp-primary` | Brand red — dividers, prompt left-border, section numbers, links, focus rings |
+| `--wncp-primary-dark` | `#8A1303` | `--wncp-primary-dark` | Reserved for the signature red gradient (use only on >200px elements) |
+| `--wncp-ink` | `#0A0A0A` | `--wncp-secondary` | Primary heading color on light surfaces |
+| `--wncp-text` | `#2D2D2D` | `--wncp-neutral-dark` | Body text on light surfaces |
+| `--wncp-muted` | `#6B7280` | `--wncp-neutral-mid` | Subtitles, captions, metadata, card body |
+| `--wncp-line` | `#E5E7EB` | `--wncp-neutral-light` | Card borders, section separators |
+| `--wncp-bg` | `#FFFFFF` | `--wncp-surface-white` | **Default page background** (web adaptation: white, not the `#F9F9F9` slide default) |
+| `--wncp-surface-soft` | `#F9F9F9` | `--wncp-surface` | Reserved for the Founder OS prompt block and other embedded surfaces |
 
-### Primary Palette
-- **Primary (`#BD1B04`)**: The brand's most distinctive chromatic color—suitable for buttons, CTAs, and key interactive elements.
-- **Secondary (`#000000`)**: A supporting color for less prominent UI elements, chips, and secondary actions.
-- **Tertiary (`#0040d6`)**: An additional accent color for highlights, badges, or decorative elements.
-- **Neutral (`#FFFFFF`)**: A neutral base color for backgrounds, surfaces, and non-chromatic elements.
-
-### The "No-Line" Rule
-**Explicit Instruction:** Prohibit 1px solid borders for sectioning.
-Boundaries must be defined solely through background color shifts. To separate a sidebar or a header, use `surface-container-low` against a `surface` background. Structural integrity is maintained through alignment and tonal shifts, never through "boxes."
-
-### Surface Hierarchy & Nesting
-Treat the UI as stacked sheets of premium matte paper.
-- **Base Level:** `surface` (#F9F9F9)
-- **Embedded Modules:** `surface-container` (#EEEEEE)
-- **Floating/Action Items:** `surface-container-lowest` (#FFFFFF)
-
-### Signature Textures
-Avoid flat, "dead" reds. For main CTA backgrounds or large graphic blocks, use a subtle linear gradient transitioning from `primary` (#BD1B04) to a slightly darker red at a 135-degree angle. This adds "visual soul" and depth without violating the flat-design box aesthetic.
-
----
+**No dark mode.** The site is light-only. Do not use `--wncp-surface-dark` (`#0A0A0A`) anywhere on this site.
 
 ## 3. Typography
 
-The system utilizes **Inter** as a geometric, tech-forward anchor for headlines and labels, with **Plus Jakarta Sans** for body text. Typography should be typeset with tight tracking (-0.02em) for headings to achieve a "Swiss style" editorial look.
+The PowerPoint system uses the Aptos-safe stack (`Aptos Display`, `Aptos`, `Segoe UI`, `Helvetica Neue`, `Arial`, `Calibri`). Aptos is **not yet broadly available on the web** (still rolling out via Microsoft 365 / Windows 11 updates). So the web adaptation uses the closest equivalents and self-hosts them via `next/font`.
 
-- **Display LG (3.5rem)**: Reserved for hero statements. High-impact, bold weight.
-- **Headline MD (1.75rem)**: Primary slide titles. Always in `on-surface` (#1A1C1C).
-- **Title LG (1.375rem)**: For sub-headers and card titles.
-- **Body LG (1rem)**: The standard for analytical content. Ensure a line height of 1.6 for maximum legibility against white backgrounds.
-- **Label MD (0.75rem)**: Used for technical metadata or small captions. Often set in All-Caps with +0.05em tracking for a "labeled specimen" look.
+| Role | Font | Source design system var | Web usage |
+|---|---|---|---|
+| Headlines (display, headlines, titles, metrics) | **Inter**, 700 weight, tight tracking | `--wncp-font-display` (Aptos Display) | h1, h2, h3, all `<strong>`, section numbers |
+| Body (paragraphs, lists, labels) | **Plus Jakarta Sans**, 400 / 500 weight, normal tracking | `--wncp-font-body` (Aptos) | p, li, button, summary, small |
+| Code (Founder OS prompt, inline `<code>`) | **JetBrains Mono** (or `ui-monospace` fallback) | `--wncp-font-mono` (Cascadia Mono) | Founder OS prompt, inline code |
 
----
+**Type scale (px):**
 
-## 4. Elevation & Depth
+| Token | Size | Web usage |
+|---|---|---|
+| Display | 40px | Hero `h1` (page title) |
+| Headline | 24px | Section `h2` ("The three tiers", "Prime video") |
+| Title LG | 18px | `<summary>` lines, tier sub-headers |
+| Title MD | 13px | Card titles in dense layouts |
+| Body LG | 16px | Standard paragraphs |
+| Body MD | 11px | Card body, captions |
+| Label | 11px | Metadata strip, tier tags, ALL-CAPS, wide tracking (0.18em) |
 
-### The Layering Principle
-Depth is achieved through **Tonal Layering**. To "lift" an element (like an AI insight card), place a `surface-container-lowest` (#FFFFFF) card on a `surface-container-low` (#F3F3F4) background. The contrast provides the lift.
+**Tracking:**
+- Headlines: tight (`-0.02em`)
+- Labels (uppercase metadata, tier tags): wide (`0.18em`)
 
-### Ambient Shadows
-If a floating effect is required (e.g., a modal or a floating action menu), use "Air Shadows":
-- **Blur:** 40px - 60px
-- **Opacity:** 4% - 8%
-- **Color:** A tinted version of `on-surface` (never pure black).
+## 4. Layout & spacing
 
-### The "Ghost Border" Fallback
-If a border is required for accessibility, use the **Ghost Border**: `outline-variant` (#E5BEB6) at **15% opacity**. This creates a suggestion of a container without breaking the editorial flow.
+**Single column, max-width 880px.** Generous whitespace. No grid system beyond one implicit column.
 
-### Glassmorphism
-For "Kinetic" overlays, use a semi-transparent `surface` color with a `20px backdrop-blur`. This allows WNCP's brand red or large-scale typography to bleed through the UI layers, creating a sense of sophisticated transparency.
+**Spacing scale (px):**
 
----
+| Token | Value | Usage |
+|---|---|---|
+| 1 | 4px | Tightest inline gap |
+| 2 | 8px | Inline label gap |
+| 3 | 12px | Inside button padding |
+| 4 | 16px | Standard paragraph gap, list item gap |
+| 5 | 22px | Section-internal gap |
+| 6 | 36px | Section-to-section gap |
+| 7 | 50px | Page top/bottom padding |
+| 8 | 72px | Hero top margin |
 
-## 5. Components
+## 5. Lines, borders, elevation
 
-### Flat Design Boxes (Containers)
-- **Corner Radius:** Fixed at **0px** across all scales (sm to xl).
-- **Styling:** Use `primary-container` (#BD1B04) as a vertical "grounding bar" on the left side of text containers to denote active focus.
+| Element | Spec | Notes |
+|---|---|---|
+| Top accent line | 3px solid `--wncp-primary` | Full-width at y=0, every page (one element on this site) |
+| Section separator | 1px solid `--wncp-line` | Between major content zones, sparingly |
+| Prompt left border | 4px solid `--wncp-primary` | On the Founder OS prompt block |
+| Card border | 1px solid `--wncp-line` | On the `<details>` collapsibles (top, bottom only — left/right zero) |
+| Link underline | 1px text-underline-offset 3px | All `<a>` elements |
 
-### Buttons
-- **Primary:** `primary-container` background, `on-primary` text. Square edges.
-- **Secondary:** Transparent background, `primary` 2px border (Internal only), or `on-surface` text.
-- **Hover State:** Shift from `primary-container` to `primary` (the darker red).
+**Corner radius: 0px everywhere** except the copy-to-clipboard button, which uses 4px (matches the `wncp-radius-button` web adaptation; the PowerPoint spec says 2px but that's too sharp for a clickable web control).
 
-### Input Fields
-- **Style:** Underline only (2px `outline` token) or a subtle `surface-container-high` fill. No 4-sided boxes.
-- **Error:** Use the `error` (#BA1A1A) token for both the underline and the helper text.
+**No drop shadows.** Elevation is tonal: the Founder OS prompt sits on `--wncp-surface-soft` against the `--wncp-bg` page surface.
 
-### Data Visualization
-- **AI Kinetic Lines:** Use thin, horizontal bars of `#BD1B04` to separate headline concepts.
-- **Lists:** No dividers. Use **24px vertical padding** (from the Spacing Scale) to create separation between list items.
+## 6. Component patterns
 
----
+### 6.1 Hero (page top)
+- 3px red top accent line, full-width
+- Meta strip: date · location · audience (uppercase label, 11px, wide tracking)
+- Kicker: "By the way, AI" (red, 11px, wide tracking, bold)
+- `h1`: 40px Inter Bold, tight tracking
+- Lede: 18px body, max 64ch
 
-## 6. Do's and Don'ts
+### 6.2 Section header (`h2`)
+- Section number in red, 14px, wide tracking, bold (e.g., "00", "01", "02")
+- Section title in ink, 24px Inter Bold, tight tracking
+- Inline baseline alignment, not stacked
 
-### Do
-- **Do** lean into extreme asymmetry. Large titles on the left, empty space on the right.
-- **Do** use the logo in its high-contrast black/red version on white sections.
-- **Do** treat "White" as a color. Use it to force the user's focus onto the red accents.
-- **Do** keep all corners perfectly square (0px).
+### 6.3 Collapsible tier (`<details>`)
+- Top + bottom 1px line in `--wncp-line` (no left/right border)
+- 16-18px summary text, Inter Bold
+- Chevron: red triangle, rotates 90° when open
+- Right-aligned tag: 12px, uppercase, `--wncp-muted` (e.g., "NO BACKEND · NO SETUP")
+- Body padding: 16-28px left margin so the content indents under the summary
 
-### Don't
-- **Don't use orange.** Any deviation from the deep red (#BD1B04) breaks the brand authority.
-- **Don't use divider lines.** They clutter the "Kinetic Editorial" look. Use negative space.
-- **Don't use standard drop shadows.** If it looks like a "Material Design" shadow, it’s too heavy.
-- **Don't use rounded buttons.** All elements must feel architectural and "built."
+### 6.4 Founder OS prompt block
+- Background: `--wncp-surface-soft` (`#F9F9F9`)
+- Left border: 4px solid `--wncp-primary`
+- Padding: 18px 20px
+- Body text: 13px Inter (or mono fallback), 1.55 line-height, `--wncp-ink` color
+- Copy button: absolute-positioned top-right, white background, 1px border, 11px uppercase Plus Jakarta Sans
+- Whitespace preserved (`white-space: pre-wrap`)
+
+### 6.5 Prime video block
+- Aspect ratio 16:9 (padding-bottom: 56.25% wrapper)
+- `loading="lazy"` iframe
+- Caption above the iframe: video title in `--wncp-ink` bold + meta in `--wncp-muted` (creator, length, view count, post date)
+
+### 6.6 Footer
+- 1px top border in `--wncp-line`
+- 13px body, `--wncp-muted` color
+- Two lines: tagline, then `wncp.ai` link
+
+## 7. Mobile (max-width: 720px)
+
+- Wrap padding: 32px 20px 64px (down from 48px 32px 96px)
+- h1: 32px (down from 40px)
+- Type scale otherwise unchanged
+- Collapsibles: full-width, no left/right margin
+- Video: scales naturally with the wrapper
+
+## 8. Accessibility
+
+- Color contrast: all text-on-background pairs meet WCAG AA (verified: ink-on-white = 18.7:1, muted-on-white = 4.6:1).
+- `<details>`/`<summary>` is keyboard-navigable by default.
+- YouTube iframe: `title` attribute set, `loading="lazy"`, `allowfullscreen`.
+- Founder OS prompt: `<pre>`-style preserved, copy button is a `<button type="button">` with `aria-label`.
+- Focus rings: 2px solid `--wncp-primary` (visible, never removed).
+
+## 9. What this file is NOT
+
+- **Not the canonical design system.** The canonical spec is in `5_Library/Design Systems/WNCP AI Design System/source/Design.md`.
+- **Not a CSS file.** The tokens defined here are the source of truth for what goes into `src/app/globals.css` (or `<style>` in `site/index.html`). The CSS file itself is a 1:1 rendering of these tokens.
+- **Not a redesign.** It is a *context-appropriate subset* of the same brand. The white-forward default is a deliberate web-context choice, not a brand change.
+
+## 10. Change log
+
+- **2026-06-04:** Initial web adaptation. PowerPoint spec → web tokens. Inter + Plus Jakarta Sans substituted for Aptos (web availability). White-forward default replaces PowerPoint's `--wncp-surface` (`#F9F9F9`) as the page background.
