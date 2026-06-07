@@ -1,5 +1,6 @@
 /* ============================================================
-   WNCP AI Design System — Kinetic Editorial
+   WNCP AI Design System — Refined Editorial
+   High-end magazine layout: FT Weekend / Monocle inspired
    ============================================================ */
 
 /* ---------- Design Tokens ---------- */
@@ -10,9 +11,9 @@
   --wncp-text: #1a1a1a;
   --wncp-muted: #6b7280;
 
-  --font-sans: "Inter", "Inter Fallback", system-ui, -apple-system,
+  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback",
+  --font-display: var(--font-plus-jakarta), "Plus Jakarta Sans",
     var(--font-sans);
 }
 
@@ -33,75 +34,110 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+
+/* ---------- Top Accent Bar ---------- */
+.top-accent {
+  height: 3px;
+  background: var(--wncp-brand);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 /* ---------- Layout ---------- */
 main {
-  max-width: 680px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: 32px 32px 80px;
 }
 
-/* ---------- Meta strip ---------- */
+/* ---------- Page Header (elevated meta strip) ---------- */
+.page-header {
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 0;
+  margin-bottom: 32px;
+}
+
 .meta {
-  font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: 12px;
   color: var(--wncp-muted);
-  text-align: center;
-  margin-bottom: 8px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.5;
 }
 
 /* ---------- Headings ---------- */
 h1 {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: clamp(28px, 4.5vw, 40px);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin: 0;
-  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 6px;
   color: var(--wncp-text);
+  max-width: 680px;
+  text-wrap: balance;
 }
 
-h2 {
+/* Section heading wrapper — flex with decorative numeral */
+.section-head {
+  display: flex;
+  gap: clamp(12px, 2.5vw, 24px);
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.section-head .num {
+  flex: 0 0 auto;
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.015em;
-  margin: 0 0 16px;
-  text-align: center;
-  color: var(--wncp-text);
+  font-size: clamp(56px, 10vw, 96px);
+  font-weight: 200;
+  line-height: 1;
+  color: var(--wncp-brand);
+  opacity: 0.10;
+  min-width: 0.55em;
+  letter-spacing: -0.04em;
+  user-select: none;
 }
 
-h2 .num {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--wncp-brand);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  vertical-align: middle;
-  margin-right: 6px;
+.section-head h2 {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin: 0;
+  padding-top: 0.15em;
+  color: var(--wncp-text);
 }
 
 h3 {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin: 28px 0 10px;
+  margin: 28px 0 12px;
   color: var(--wncp-muted);
-  text-align: center;
 }
 
 /* ---------- Follow-up line ---------- */
 .followup {
   font-size: 14px;
   color: var(--wncp-muted);
-  text-align: center;
-  margin: 10px 0 18px;
-  line-height: 1.5;
+  margin: 0 0 20px;
+  line-height: 1.55;
+  max-width: 600px;
+}
+
+.followup em {
+  font-style: italic;
 }
 
 /* ---------- Lede ---------- */
@@ -109,8 +145,8 @@ h3 {
   font-size: 17px;
   line-height: 1.6;
   color: var(--wncp-text);
-  text-align: center;
-  margin: 0 0 12px;
+  margin: 0 0 8px;
+  max-width: 640px;
 }
 
 /* ---------- Paragraphs ---------- */
@@ -119,6 +155,7 @@ p {
   line-height: 1.7;
   color: var(--wncp-text);
   margin: 0 0 10px;
+  max-width: 640px;
 }
 
 p strong {
@@ -126,16 +163,54 @@ p strong {
   color: var(--wncp-text);
 }
 
-/* ---------- Horizontal rule ---------- */
-hr {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 36px 0;
+/* ---------- Decorative Section Dividers ---------- */
+.section-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #d1d5db 15%,
+    #d1d5db 85%,
+    transparent 100%
+  );
+  margin: 48px 0;
 }
 
-/* ---------- Sections ---------- */
-section {
-  margin-bottom: 8px;
+.section-divider::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wncp-brand);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.section-divider:hover::after {
+  opacity: 0.6;
+}
+
+/* ---------- Section Cards ---------- */
+.level-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  background: var(--wncp-surface-soft);
+  padding: clamp(24px, 3vw, 36px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.level-card:hover {
+  border-color: rgba(189, 27, 4, 0.12);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.03);
+}
+
+.level-card .section-head .num {
+  opacity: 0.12;
 }
 
 /* ---------- Tool links ---------- */
@@ -149,30 +224,30 @@ section {
   font-size: 14px;
   line-height: 1.65;
   color: var(--wncp-text);
-  padding: 6px 0;
-  border-bottom: 1px solid #f3f4f6;
+  padding: 10px 0 10px 16px;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s ease;
 }
 
-.tool-links li:last-child {
-  border-bottom: none;
+.tool-links li:hover {
+  border-left-color: var(--wncp-brand);
 }
 
-.tool-links li::before {
-  content: "— ";
-  display: inline;
-  color: var(--wncp-brand);
-  font-weight: 600;
-  margin-right: 6px;
+.tool-links li + li {
+  border-top: 1px solid #f0f0f0;
 }
 
 .tool-links a {
   color: var(--wncp-brand);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.15s ease;
 }
 
 .tool-links a:hover {
+  color: #8a1403;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .tool-links li strong {
@@ -184,11 +259,18 @@ section {
 .video-wrap {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 */
-  margin: 24px 0 8px;
-  background: #f3f4f6;
-  border-radius: 0;
+  padding-top: 56.25%;
+  margin: 24px 0 6px;
+  background: #f0f0f0;
+  border-radius: 6px;
   overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease;
+}
+
+.video-wrap:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
 }
 
 .video-wrap iframe {
@@ -201,21 +283,24 @@ section {
 }
 
 .video-caption {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--wncp-muted);
-  text-align: center;
   margin: 4px 0 20px;
+  line-height: 1.5;
+  font-style: italic;
 }
 
 /* ---------- Collapsible sections ---------- */
 details {
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  margin-top: 20px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
 }
 
-details + details {
-  border-top: none;
+details:hover {
+  border-color: rgba(189, 27, 4, 0.15);
 }
 
 summary {
@@ -223,54 +308,70 @@ summary {
   font-weight: 500;
   color: var(--wncp-muted);
   cursor: pointer;
-  padding: 10px 0;
+  padding: 12px 16px;
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   user-select: none;
+  transition: color 0.15s ease;
+  background: rgba(0, 0, 0, 0.01);
+}
+
+summary:hover {
+  color: var(--wncp-text);
 }
 
 summary::-webkit-details-marker {
   display: none;
 }
 
+/* Refined chevron */
 summary::before {
   content: "";
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-right: 1.5px solid var(--wncp-muted);
   border-bottom: 1.5px solid var(--wncp-muted);
-  transform: rotate(45deg);
-  transition: transform 0.15s ease;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
   flex-shrink: 0;
+  margin-top: -2px;
 }
 
 details[open] > summary::before {
-  transform: rotate(-135deg);
+  transform: rotate(45deg);
 }
 
 details[open] {
+  padding-bottom: 4px;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+details[open] summary {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   padding-bottom: 12px;
 }
 
 details .tool-links {
-  margin-left: 18px;
-  margin-bottom: 4px;
+  margin: 8px 16px 4px;
+}
+
+details .tool-links li {
+  padding: 8px 0 8px 12px;
 }
 
 /* ---------- Footer ---------- */
 footer {
-  margin-top: 40px;
-  padding-top: 16px;
+  margin-top: 32px;
+  padding-top: 20px;
   border-top: 1px solid #e5e7eb;
 }
 
 footer p {
   font-size: 13px;
   color: var(--wncp-muted);
-  text-align: center;
   line-height: 1.6;
 }
 
@@ -278,10 +379,13 @@ footer a {
   color: var(--wncp-muted);
   text-decoration: underline;
   text-underline-offset: 2px;
+  text-decoration-color: rgba(107, 114, 128, 0.3);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 footer a:hover {
   color: var(--wncp-brand);
+  text-decoration-color: var(--wncp-brand);
 }
 
 /* ---------- Link defaults ---------- */
@@ -295,29 +399,92 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(189, 27, 4, 0.08);
+  color: var(--wncp-text);
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
   main {
-    padding: 32px 16px 64px;
+    padding: 24px 16px 64px;
+  }
+
+  .page-header {
+    padding: 10px 0;
+    margin-bottom: 24px;
+  }
+
+  .meta {
+    font-size: 11px;
+    letter-spacing: 0.06em;
   }
 
   h1 {
     font-size: 24px;
   }
 
-  h2 {
+  .section-head {
+    gap: 10px;
+  }
+
+  .section-head .num {
+    font-size: 48px;
+    min-width: 0.5em;
+  }
+
+  .section-head h2 {
     font-size: 18px;
+  }
+
+  .level-card {
+    padding: 20px;
   }
 
   .lede {
     font-size: 16px;
   }
 
-  .meta {
-    font-size: 12px;
-  }
-
   .followup {
     font-size: 13px;
+  }
+
+  .section-divider {
+    margin: 36px 0;
+  }
+
+  .tool-links li {
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 20px 12px 56px;
+  }
+
+  .level-card {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .section-head .num {
+    font-size: 40px;
+  }
+
+  h1 {
+    font-size: 22px;
   }
 }

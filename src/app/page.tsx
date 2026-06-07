@@ -9,9 +9,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      {/* Meta strip */}
-      <div className="meta" aria-label="Meeting context">
-        2026-05-04 · Cuba De Ayer · Burtonsville, MD · For Dr. Monet Stanford, PharmD
+      {/* Page header — elevated meta strip */}
+      <div className="page-header">
+        <p className="meta" aria-label="Meeting context">
+          2026-05-04 · Cuba De Ayer · Burtonsville, MD · For Dr. Monet Stanford, PharmD
+        </p>
       </div>
 
       <h1>Founder AI Prototyping — A Three-Level Path</h1>
@@ -29,16 +31,15 @@ export default function Home() {
         putting it in front of people, and watching what happens.
       </p>
 
-      <hr />
+      {/* Decorative divider */}
+      <div className="section-divider" role="separator" aria-hidden="true" />
 
       {/* Level 1 */}
-      <section aria-labelledby="l1-heading">
-        <h2 id="l1-heading">
-          <span className="num" aria-hidden="true">
-            1
-          </span>{" "}
-          A landing page people can click
-        </h2>
+      <section aria-labelledby="l1-heading" className="level-card">
+        <div className="section-head">
+          <span className="num" aria-hidden="true">1</span>
+          <h2 id="l1-heading">A landing page people can click</h2>
+        </div>
 
         <p>
           <strong>What you build:</strong> A single-page prototype, no backend,
@@ -109,16 +110,15 @@ export default function Home() {
         </details>
       </section>
 
-      <hr />
+      {/* Decorative divider */}
+      <div className="section-divider" role="separator" aria-hidden="true" />
 
       {/* Level 2 */}
-      <section aria-labelledby="l2-heading">
-        <h2 id="l2-heading">
-          <span className="num" aria-hidden="true">
-            2
-          </span>{" "}
-          A working web app with a backend
-        </h2>
+      <section aria-labelledby="l2-heading" className="level-card">
+        <div className="section-head">
+          <span className="num" aria-hidden="true">2</span>
+          <h2 id="l2-heading">A working web app with a backend</h2>
+        </div>
 
         <p>
           <strong>What you build:</strong> A real product. Users can sign up,
@@ -190,16 +190,15 @@ export default function Home() {
         </details>
       </section>
 
-      <hr />
+      {/* Decorative divider */}
+      <div className="section-divider" role="separator" aria-hidden="true" />
 
       {/* Level 3 */}
-      <section aria-labelledby="l3-heading">
-        <h2 id="l3-heading">
-          <span className="num" aria-hidden="true">
-            3
-          </span>{" "}
-          A codebase you can keep building
-        </h2>
+      <section aria-labelledby="l3-heading" className="level-card">
+        <div className="section-head">
+          <span className="num" aria-hidden="true">3</span>
+          <h2 id="l3-heading">A codebase you can keep building</h2>
+        </div>
 
         <p>
           <strong>What you build:</strong> A real IDE, version control, and an
@@ -284,7 +283,8 @@ export default function Home() {
         </details>
       </section>
 
-      <hr />
+      {/* Decorative divider */}
+      <div className="section-divider" role="separator" aria-hidden="true" />
 
       {/* Footer */}
       <footer>
