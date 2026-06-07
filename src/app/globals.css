@@ -64,7 +64,7 @@ h1 {
   letter-spacing: -0.02em;
   color: var(--wncp-ink);
   line-height: 1.1;
-  margin: 0 0 12px;
+  margin: 0;
 }
 h1 .accent { color: var(--wncp-primary); }
 
@@ -75,10 +75,18 @@ h1 .accent { color: var(--wncp-primary); }
   margin: 0 0 24px;
 }
 
+.followup {
+  font-size: 14px;
+  color: var(--wncp-muted);
+  font-style: italic;
+  max-width: 64ch;
+  margin: 4px 0 16px;
+}
+
 hr {
   border: 0;
   border-top: 1px solid var(--wncp-line);
-  margin: 40px 0;
+  margin: 36px 0; /* spacing scale 6 */
 }
 
 h2 {
@@ -97,7 +105,7 @@ h2 .num {
   font-weight: 700;
   color: var(--wncp-primary);
   font-size: 14px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
 }
 
 h3 {
@@ -171,8 +179,8 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 /* ----- Collapsibles -------------------------------------------------------- */
-details { border-top: 1px solid var(--wncp-line); padding: 18px 0 8px; }
-details:last-of-type { border-bottom: 1px solid var(--wncp-line); }
+details { border-top: 1px solid var(--wncp-line); border-bottom: 1px solid var(--wncp-line); padding: 18px 0 8px; }
+details + details { border-top: 0; }
 
 summary {
   cursor: pointer;
@@ -215,6 +223,6 @@ footer p { margin: 0 0 4px; }
 @media (max-width: 720px) {
   .wrap { padding: 32px 20px 64px; }
   h1 { font-size: 32px; }
-  .level { padding: 20px 18px 18px; }
-  .level-title { font-size: 22px; }
+  .meta { gap: 10px; }
+  .followup { font-size: 13px; }
 }

@@ -13,6 +13,8 @@
 
 **Founder AI Prototyping — A Three-Level Path**
 
+*Follow-up from our 2026-05-04 conversation — a quick overview of vibe coding a prototype, based on what we discussed.*
+
 Two questions first: do people want this enough to use it, and can a business support it? Here's the way to find out — by building, putting it in front of people, and watching what happens.
 
 ---

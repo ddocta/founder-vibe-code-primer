@@ -28,6 +28,10 @@ export default function Page() {
         Founder AI Prototyping{' '}
         <span className="accent">— A Three-Level Path</span>
       </h1>
+      <p className="followup">
+        Follow-up from our 2026-05-04 conversation — a quick overview of
+        vibe coding a prototype, based on what we discussed.
+      </p>
       <p className="lede">
         Two questions first: do people want this enough to use it, and can a
         business support it? Here&apos;s the way to find out — by building,
@@ -70,6 +74,8 @@ export default function Page() {
             title="Learn to Vibe Code in 10 Minutes"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
 
@@ -167,6 +173,8 @@ export default function Page() {
             title="How to Build an App From SCRATCH with Lovable + Supabase"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
 
@@ -259,6 +267,8 @@ export default function Page() {
             title="How to Set Up Claude Code in 2026"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
 

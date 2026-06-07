@@ -72,7 +72,7 @@ The three levels are a **progression path**, not a choose-your-own. Each level h
 ## 5. Page structure (top to bottom)
 
 1. **Meta strip** — date, location, audience (one line, 11px caps, the only place the meeting is named).
-2. **Title + lede** — "Founder AI Prototyping — A Three-Level Path" + the framing paragraph with the two founder questions.
+2. **Title + lede** — "Founder AI Prototyping — A Three-Level Path" + an italic follow-up line ("Follow-up from our 2026-05-04 conversation — a quick overview of vibe coding a prototype") + the framing paragraph with the two founder questions.
 3. **Level 1** — keystone video + collapsible.
 4. **Level 2** — keystone video + collapsible.
 5. **Level 3** — keystone video + collapsible.
