@@ -353,6 +353,13 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer>
+        <img
+          className="footer-logo"
+          src="/logos/wncp.png"
+          alt="WNCP AI"
+          width="120"
+          height="69"
+        />
         <p>
           This page was built with{" "}
           <a href="https://wncp.ai" target="_blank" rel="noopener">

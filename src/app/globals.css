@@ -454,6 +454,19 @@ footer {
   margin-top: 32px;
   padding-top: 20px;
   border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.footer-logo {
+  display: block;
+  margin: 0 auto 16px;
+  height: auto;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
 }
 
 footer p {
