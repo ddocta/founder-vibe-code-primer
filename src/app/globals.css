@@ -19,16 +19,7 @@
 
   /* Surfaces — white-forward per the brief */
   --wncp-bg:             #FFFFFF;   /* Default page background */
-  --wncp-surface-soft:   #F9F9F9;   /* Founder OS prompt block, embedded surfaces */
-
-  /* Role accent tints — three shades of red, lightest to boldest.
-     Used as the left-bar color on .role cards and the role badge background. */
-  --role-1-bar:          #E6B4AC;   /* Pitcher — lightest, "you're starting" */
-  --role-1-bg:           #FDF5F3;
-  --role-2-bar:          #BD1B04;   /* Builder — brand red, "the workhorse" */
-  --role-2-bg:           #FBEFEC;
-  --role-3-bar:          #8A1303;   /* Engineer — darkest, "you own this" */
-  --role-3-bg:           #F6E5E2;
+  --wncp-surface-soft:   #F9F9F9;   /* Reserved for future embedded surfaces; not currently used by the page */
 }
 
 * { box-sizing: border-box; }
@@ -64,17 +55,6 @@ body { background: var(--wncp-bg); }
   align-items: center;
 }
 .meta .dot { width: 4px; height: 4px; background: var(--wncp-primary); border-radius: 50%; display: inline-block; }
-
-/* ----- Kicker (e.g., "By the way, AI") ------------------------------------- */
-.kicker {
-  font-family: var(--font-inter), Inter, Calibri, sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--wncp-primary);
-  margin: 0 0 8px;
-  font-weight: 700;
-}
 
 /* ----- Headings ------------------------------------------------------------ */
 h1 {
@@ -145,130 +125,52 @@ a:hover { text-decoration-thickness: 2px; }
   outline-offset: 2px;
 }
 
-/* ----- Callout (the "watch this first" box) ------------------------------- */
-.callout {
-  background: var(--wncp-surface-soft);
-  border-left: 4px solid var(--wncp-primary);
-  padding: 14px 18px;
-  margin: 20px 0 8px;
-  max-width: 70ch;
-  font-size: 15px;
-}
-
-/* ----- Role cards (the three mastery roles) ------------------------------- */
-.role {
-  border: 1px solid var(--wncp-line);
-  border-left: 6px solid var(--role-1-bar);
-  background: var(--role-1-bg);
-  padding: 24px 24px 20px;
-  margin: 24px 0;
+/* ----- Video embed (16:9 responsive iframe) ------------------------------ */
+.video-wrap {
   position: relative;
+  width: 100%;
+  max-width: 640px;
+  padding-bottom: 56.25%; /* 16:9 */
+  margin: 0 0 20px;
 }
-.role-1 { border-left-color: var(--role-1-bar); background: var(--role-1-bg); }
-.role-2 { border-left-color: var(--role-2-bar); background: var(--role-2-bg); }
-.role-3 { border-left-color: var(--role-3-bar); background: var(--role-3-bg); }
-
-.role-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 12px;
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 4px;
 }
-.role-badge {
-  display: inline-block;
-  font-family: var(--font-inter), Inter, Calibri, sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  font-weight: 700;
-  padding: 4px 8px;
-  background: var(--wncp-bg);
-  color: var(--wncp-ink);
-  border: 1px solid var(--wncp-line);
-  text-transform: uppercase;
-}
-.role-1 .role-badge { color: var(--role-1-bar); }
-.role-2 .role-badge { color: var(--role-2-bar); }
-.role-3 .role-badge { color: var(--role-3-bar); }
-
-.role-name {
-  font-family: var(--font-inter), Inter, Calibri, sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: -0.015em;
-  color: var(--wncp-ink);
-  margin: 0;
-}
-
-.role-quote {
-  font-family: var(--font-inter), Inter, Calibri, sans-serif;
-  font-size: 18px;
-  font-style: italic;
-  color: var(--wncp-ink);
-  margin: 4px 0 20px;
-  max-width: 64ch;
-  line-height: 1.45;
-}
-
-.role-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 16px 0 20px;
-  padding: 16px 0;
-  border-top: 1px solid var(--wncp-line);
-  border-bottom: 1px solid var(--wncp-line);
-}
-.role-grid p { margin: 0; font-size: 14px; line-height: 1.55; }
-
-.role-label {
-  display: block;
-  font-family: var(--font-inter), Inter, Calibri, sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.video-caption {
+  font-size: 14px;
   color: var(--wncp-muted);
-  font-weight: 700;
-  margin: 16px 0 4px;
+  margin: 16px 0 8px;
+  max-width: 70ch;
 }
 
-.role-checklist {
+/* ----- Tool links inside collapsibles ---------------------------------- */
+.tool-links {
   list-style: none;
-  margin: 8px 0 4px;
-  padding: 0;
-  counter-reset: step;
-}
-.role-checklist li {
-  position: relative;
-  padding: 6px 0 6px 32px;
   margin: 0;
-  max-width: 66ch;
+  padding: 0;
+}
+.tool-links li {
   font-size: 15px;
   line-height: 1.55;
-  counter-increment: step;
+  padding: 6px 0 6px 20px;
+  position: relative;
+  max-width: 70ch;
 }
-.role-checklist li::before {
-  content: counter(step);
+.tool-links li::before {
+  content: "—";
   position: absolute;
   left: 0;
-  top: 6px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--wncp-bg);
-  border: 1px solid var(--wncp-line);
-  font-family: var(--font-inter), Inter, Calibri, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
   color: var(--wncp-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 700;
 }
-.role-1 .role-checklist li::before { color: var(--role-1-bar); }
-.role-2 .role-checklist li::before { color: var(--role-2-bar); }
-.role-3 .role-checklist li::before { color: var(--role-3-bar); }
 
-/* ----- Collapsibles (used for the "one video per role" section) ---------- */
+/* ----- Collapsibles -------------------------------------------------------- */
 details { border-top: 1px solid var(--wncp-line); padding: 18px 0 8px; }
 details:last-of-type { border-bottom: 1px solid var(--wncp-line); }
 
@@ -299,38 +201,6 @@ details[open] summary .chevron { transform: rotate(90deg); }
 details .body { padding: 16px 0 8px 28px; }
 details .body p:last-child { margin-bottom: 0; }
 
-/* ----- Founder OS prompt block ------------------------------------------- */
-.prompt-wrap { margin: 16px 0 8px; }
-.prompt {
-  position: relative;
-  background: var(--wncp-surface-soft);
-  border-left: 4px solid var(--wncp-primary);
-  padding: 18px 20px;
-  font-family: var(--font-inter), Inter, 'Courier New', monospace;
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--wncp-ink);
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-.copy-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--wncp-bg);
-  border: 1px solid var(--wncp-line);
-  color: var(--wncp-ink);
-  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 6px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.copy-btn:hover { border-color: var(--wncp-primary); color: var(--wncp-primary); }
-.copy-btn.copied { color: var(--wncp-primary); border-color: var(--wncp-primary); }
-
 /* ----- Footer ------------------------------------------------------------- */
 footer {
   margin-top: 64px;
@@ -345,8 +215,6 @@ footer p { margin: 0 0 4px; }
 @media (max-width: 720px) {
   .wrap { padding: 32px 20px 64px; }
   h1 { font-size: 32px; }
-  .role-grid { grid-template-columns: 1fr; gap: 16px; }
-  .role { padding: 20px 18px 18px; }
-  .role-name { font-size: 22px; }
-  .role-quote { font-size: 16px; }
+  .level { padding: 20px 18px 18px; }
+  .level-title { font-size: 22px; }
 }

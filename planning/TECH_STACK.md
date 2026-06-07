@@ -7,13 +7,13 @@ A single-page, fully static, content-only site. No server, no database, no auth,
 | Layer | Choice | Why |
 |---|---|---|
 | Framework | **Next.js 15 (App Router)** | Static export, React Server Components, `next/font` for self-hosted typography. |
-| Output mode | **`output: 'export'`** | Produces a `out/` directory of pure HTML/CSS/JS. No Node runtime needed at serve time. |
+| Output mode | **Standard `next build`** | Vercel serves the standard Next.js build as static. (We removed `output: 'export'` after it caused a `routes-manifest.json` deploy error — see PRD §9.) |
 | Hosting | **Vercel** | Native Next.js support. Static export auto-detected. Preview deploys per branch. |
 | DNS | **Cloudflare** | `wncp.ai` zone already managed here. Wildcard `*.wncp.ai` pattern for meeting-specific subdomains. |
 | TypeScript | **Yes** | Catches type errors during the port from `index.html` to `app/page.tsx`. |
 | Styling | **CSS (handwritten) + design-system CSS variables** | No Tailwind, no CSS-in-JS. The site is a single page; a styling framework is overhead. All color, type, spacing, line, radius values come from `resources/DESIGN.md` (the WNCP AI Design System, web-adapted). |
 | Fonts | **Self-hosted via `next/font`** | No Google Fonts CDN hit. The fonts loaded are Inter + Plus Jakarta Sans (web adaptation of the WNCP Aptos-safe stack). |
-| JS framework bits | **React 19 (RSC by default)** | Only the copy-to-clipboard button is a client component. Everything else is a server component. |
+| JS framework bits | **React 19 (RSC by default)** | The page is a single server component. No client components. |
 | Deployment trigger | **git push to `dev` branch** | Vercel auto-creates a preview URL. Promote to prod on approval. |
 | Repo | **git on local, `dev` branch** | Per the WNCP `team-git-workflow` skill: develop on `dev`, merge into `dev` for staging, promote `dev` to `main` for production. |
 
@@ -34,16 +34,14 @@ A single-page, fully static, content-only site. No server, no database, no auth,
 ├── site/
 │   └── index.html                  # reference HTML build (visual review)
 └── (after port:)
-    ├── src/app/
-    │   ├── page.tsx                # production page (port of site/index.html)
+    src/app/
+    │   ├── page.tsx                # production page (Pitch 3: framing paragraph + three numbered levels)
     │   ├── layout.tsx              # root layout, font registration
-    │   └── globals.css             # imports design tokens from resources/DESIGN.md
-    ├── src/components/
-    │   ├── Collapsible.tsx         # accessible <details>/<summary> wrapper
-    │   └── CopyPrompt.tsx          # Founder OS prompt + copy-to-clipboard button
-    ├── next.config.js              # output: 'export', images: { unoptimized: true }
-    ├── package.json
-    └── tsconfig.json
+    │   └── globals.css             # design tokens from resources/DESIGN.md
+    src/components/                 # (empty — Founder OS prompt removed in v2.0)
+    next.config.js                  # images: { unoptimized: true } (no static export)
+    package.json
+    tsconfig.json
 ```
 
 ## Runtime dependencies
@@ -79,7 +77,7 @@ DNS: `2026-05-04-meetings.wncp.ai` → Vercel per the `wncp-vercel-deploy-cloudf
 ## What this stack is NOT
 
 - **Not a CMS.** Content lives in `app/page.tsx` and `planning/01-page-copy.md`. Editing is a code change.
-- **Not a backend.** No API routes, no serverless functions, no database. The Founder OS prompt is a copy-paste artifact, not an integrated form.
+- **Not a backend.** No API routes, no serverless functions, no database. The page is a static deliverable, not an interactive product.
 - **Not authenticated.** The site is fully public. There is no admin, no user, no rate limiting beyond Vercel's defaults.
 - **Not analytics-instrumented.** No GA, no Plausible, no PostHog. Add only if the user requests.
 - **Not a long-lived site.** It is a 1:1 artifact for one meeting on 2026-05-04. After the meeting it can stay up as a public reference, but no commitment to maintain.
