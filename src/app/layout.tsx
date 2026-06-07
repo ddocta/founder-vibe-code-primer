@@ -20,7 +20,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Founder Vibe Code Primer — 2026-05-04",
   description:
-    "A one-page primer for non-technical founders. Built for the 2026-05-04 lunch with Dr. Monet Stanford, PharmD at Ayeer Cuba, Burtonsville, MD.",
+    "A one-page primer for non-technical founders. Built for the 2026-05-04 lunch with Dr. Monet Stanford, PharmD at Cuba De Ayer, Burtonsville, MD.",
 };
 
 export default function RootLayout({

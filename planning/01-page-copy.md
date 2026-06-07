@@ -1,82 +1,88 @@
-# Page Copy — Founder AI Prototyping Primer
-**Date:** 2026-05-04 · **Location:** Cuba De Ayer, Burtonsville, MD · **For:** Dr. Monet Stanford, PharmD
-**URL:** https://2026-05-04-meetings.wncp.ai/
-**Deployment:** Vercel (Next.js 15, standard build served as static)
-
----
+# 01-page-copy.md — Source-of-truth page copy (v2.2)
 
 ## Meta strip
+2026-05-04 · Cuba De Ayer · Burtonsville, MD · For Dr. Monet Stanford, PharmD
 
-`2026-05-04 · Cuba De Ayer · Burtonsville, MD · For Dr. Monet Stanford, PharmD`
+## Title
+Founder AI Prototyping — A Three-Level Path
 
-## Title + lede
-
-**Founder AI Prototyping — A Three-Level Path**
-
+## Follow-up line (between title and lede)
 *Follow-up from our 2026-05-04 conversation — a quick overview of vibe coding a prototype, based on what we discussed.*
 
+## Lede (framing paragraph)
 Two questions first: do people want this enough to use it, and can a business support it? Here's the way to find out — by building, putting it in front of people, and watching what happens.
 
----
+## Level 1 — A landing page people can click
 
-## Level 1 — A landing page in your browser
+**What you build:** A single-page prototype, no backend, no login. Clickable in a browser. You can show it to one person this week.
 
-**What you build.** A single clickable page, no backend, no database, no login. Free, browser-based, no setup.
+**What you find out:** Whether the problem is big enough that real people care.
 
-**What you find out.** Whether the problem is big enough that one specific person will engage with your version of the solution. If they won't click the button on a free page, they won't click it on a paid one.
+**You graduate when:** 5 people have seen it, and at least one has told you "when can I use this?"
 
-**You graduate when.** You've shown the page to 5 different people, heard the same 2-3 things repeated back, and at least one of them has asked "when can I sign up?"
+### Key tools
+- **Google AI Studio App Builder** — Describe your app in a paragraph, get a working page back. Free tier, browser, no setup. Builds full front-ends from prompts.
+- **Google Stitch** — Design the visual layer. Stitch 2.0 pulls design systems from URLs, generates clickable prototypes, and exports to AI Studio. Free.
 
-**Keystone video.** [Learn to Vibe Code in 10 Minutes](https://www.youtube.com/watch?v=-LFB8D9WV-g) — sets the vocabulary for everything below.
+### Primary video
+[Google AI Studio — Full Tutorial 2026: How To Build an App](https://www.youtube.com/watch?v=Dem3ZSQ6RVM)
+Mikey No Code · 16 min · 100K views · March 2026
 
-**▸ More tools & quick starts**
+### Additional videos (collapsible)
+- [Google Stitch Just Became an AI Figma (And It's Free)](https://www.youtube.com/watch?v=J7XpscQqCYw) — Sam Witteveen, 12 min, 64K views
+- [Google AI Studio for Beginners (2026)](https://www.youtube.com/watch?v=UpYSNdA8a-M) — Learn With Shopify, 12 min, 234K views
 
-- [Google AI Studio](https://aistudio.google.com/) — the page generator. Free, browser, no setup. Type a paragraph about the page you wish existed, get a clickable page back.
-- [Google Stitch](https://stitch.withgoogle.com/) — for the visual layer when AI Studio's output looks generic. Free, browser.
-- [Google AI Studio — Full Tutorial 2026](https://www.youtube.com/watch?v=Dem3ZSQ6RVM) — end-to-end walkthrough of the tool.
-- [Google Stitch 2.0: From Sketch to Code](https://www.youtube.com/watch?v=QGZ24YhbZT8) — when you need the visual layer to look real.
+## Level 2 — A working web app with a backend
 
----
+**What you build:** A real product. Users can sign up, log in, save their data, come back tomorrow. Running on a real domain.
 
-## Level 2 — A web app with a backend
+**What you find out:** Whether people will keep using it — and whether a real product can hold their attention.
 
-**What you build.** A working product with real logins, saved data, a real domain. Free for the first project.
+**You graduate when:** 10 real users, 1 paying customer, or a partner conversation that demands a working product.
 
-**What you find out.** Whether real people will keep using the product once the prop is gone — the difference between "wow cool" and "I open this every week." This is the first level where you can find out whether the business model has any traction at all.
+### Key tools
+- **Supabase** — Backend as a service. PostgreSQL database, authentication (email/password + Google/GitHub login), file storage, real-time subscriptions. Free tier. You point your frontend at Supabase and it handles the backend.
+- **Vercel** — Hosting. Connect your GitHub repo, paste your env variables, Vercel auto-deploys on every push. Free tier covers your first project. Handles custom domains and SSL out of the box.
 
-**You graduate when.** You have 10 real users, you have a paying customer OR a partner conversation that requires real features, and you have felt the pain of "I broke production and I don't know how I did it."
+### Primary video
+[Supabase Tutorial for Beginners 2026: How to Use Supabase](https://www.youtube.com/watch?v=hVrSGKGU24g)
+Mikey Vibe Coding · 32 min · 16K views · 2026
 
-**Keystone video.** [How to Build an App From SCRATCH with Lovable + Supabase](https://www.youtube.com/watch?v=zA5kv1P_p7I) — Christian Peverelli (WeAreNoCode), 30:32, 373K views. The cleanest end-to-end walkthrough of the no-code path.
-
-**▸ More tools & quick starts**
-
-- [Lovable](https://lovable.dev/) — no-code frontend, generates a real React app from a description.
-- [Supabase](https://supabase.com/) — auth + database + storage in one. Free tier.
-- [Vercel](https://vercel.com/) — hosting, auto-deploys from GitHub, free tier.
-- [Lovable × Supabase: Everything Starts with Lovable](https://www.youtube.com/watch?v=WSsmsyynphM) — what the integration actually does in production.
-
----
+### Additional videos (collapsible)
+- [Build and Launch a REAL App with Codex, Supabase and Vercel](https://www.youtube.com/watch?v=Kic6Zplgc4Q) — James NoCode, 39 min, 2026
+- [Deploy A Fullstack Next.js App in Minutes](https://www.youtube.com/watch?v=snhbWQ5vnPg) — Code Ryan, 7 min, 2025
 
 ## Level 3 — A codebase you can keep building
 
-**What you build.** A real codebase in a real IDE, with version control, proper PRDs, and an AI agent as a teammate instead of a vending machine. Write tests. Review diffs. Cut branches.
+**What you build:** A real IDE, version control, and an AI agent as a teammate. When the prototype *is* the company.
 
-**What you find out.** Whether the prototype is the company — whether you can keep shipping without breaking, and whether you can hand the codebase to the next engineer you hire. This is where the business model question gets a real answer.
+**What you find out:** Can I ship faster than I break things? Can another engineer look at this and understand it?
 
-**You graduate when.** You hire or partner with an engineer, and you can talk to them about the system they own.
+**You graduate when:** You hire or partner with an engineer, or you *are* the engineer and the codebase is the foundation.
 
-**Keystone video.** [How to Set Up Claude Code in 2026](https://www.youtube.com/watch?v=kddjxKEeCuM) — beginner setup of the terminal + IDE flow. 86K views.
+### Key tools
+- **Claude Code** — Agentic coding tool. Plans, builds, debugs from natural language. Runs locally on your computer. $20/mo Pro tier. Start in Plan Mode, build with Opus, iterate with Sonnet.
+- **Cursor** — AI-first code editor. Built on VS Code. Agent mode with Opus model. 134K-view beginner tutorial available. Free tier available.
+- **Google Anti-Gravity** — Google's agentic IDE. Free for individual use. Plans projects, creates files, runs terminal commands, tests its own code. Works like a junior developer — shows changes before saving.
 
-**▸ More tools & quick starts**
+### Primary video
+[Google Antigravity Tutorial for Beginners: Build Your First App](https://www.youtube.com/watch?v=-0Irz8G0PEE)
+Teacher's Tech · 13 min · 127K views · January 2026
 
-- [Claude Code](https://claude.com/product/claude-code) — terminal, copy-paste, the easiest entry.
-- [Cursor](https://cursor.com/) — polished AI-first editor.
-- [Google Anti-Gravity](https://antigravity.google/) — free option, deep in the Google ecosystem.
-- [Cursor vs Codex vs Claude vs Zed vs Anti-Gravity (I Tested Them All)](https://www.youtube.com/watch?v=pJylXFAC87A) — 133K views, best single comparison if you don't know which IDE to pick.
-- [Riley Brown — Vibe Coding for Beginners (Full Course 2026)](https://www.youtube.com/watch?v=BpOsHF5Oj_I) — 55:25, the deep end-to-end build. Black creator, 247K subscribers.
+### Additional videos (collapsible)
+- [Full Claude Code Tutorial for Non-Technical Beginners in 2026](https://www.youtube.com/watch?v=bqJzIWAEn40) — Futurepedia, 2026
+- [Cursor AI Tutorial for Beginners: Build App with AI (2026)](https://www.youtube.com/watch?v=oQDCAJnr1aU) — Mikey No Code, 23 min, 134K views
+- [Cursor: Coding Agents Tutorial (2026)](https://www.youtube.com/watch?v=kF2WQgk1LtY) — leerob, 30 min, 51K views
+
+## Footer
+*This page was built with [Hermes](https://wncp.ai). The MLT20 AI Buildathon is the workshop this is patterned on — [mlt20buildathon.events.wncp.ai](https://mlt20buildathon.events.wncp.ai/).*
 
 ---
 
-## Footer
-
-This page was built with [Hermes](https://wncp.ai). The MLT20 AI Buildathon is the workshop this is patterned on — [mlt20buildathon.events.wncp.ai](https://mlt20buildathon.events.wncp.ai/).
+## Design notes (v2.2)
+- **No "Keystone video" label.** The primary video is embedded directly with a simple caption (creator, duration, views, date).
+- **"Key tools" section** at each level lists 2-3 tools with one-line descriptions.
+- **Centered layout.** Page is center-aligned with a comfortable reading width (~680px). Section numbers and headings use center-aligned text.
+- **Level 2** drops Lovable entirely. Supabase + Vercel are the key tools, with commentary about building a backend.
+- **All videos** are within the last 3 months (March–June 2026) or are the most-current tutorial available for a tool that hasn't meaningfully changed.
+- **Additional videos** per level live in a collapsible `<details>` block below the primary video.
